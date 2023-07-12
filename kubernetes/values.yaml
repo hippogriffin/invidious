@@ -60,7 +60,7 @@ config:
   https_only: false
   domain:
 
-# hmac_key:
-  # existingSecret:
-    # secretName:
-    # passwordKey:
+hmacKey:
+  existingSecret:
+    # secretName: invidious-values
+    # passwordKey:  hmac_key
