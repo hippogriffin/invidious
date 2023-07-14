@@ -46,7 +46,7 @@ spec:
         - name: INVIDIOUS_HMAC_KEY
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.hmacKey.existingSecret.secretNamev}}
+              name: {{ .Values.hmacKey.existingSecret.secretName }}
               key: {{ .Values.hmacKey.existingSecret.passwordKey }}
         {{- end }}
         securityContext:
