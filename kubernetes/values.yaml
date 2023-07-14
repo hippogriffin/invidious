@@ -62,6 +62,6 @@ config:
 
 hmacKey:
   existingSecret:
-    enabled: true
+    enabled: false
     secretName: invidious-values
     passwordKey:  hmac_key
