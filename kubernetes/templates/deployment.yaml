@@ -46,8 +46,8 @@ spec:
         - name: INVIDIOUS_HMAC_KEY
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.hmacKey.existingSecret.secretName | default (printf .Release.Name) }}
-              key: {{ .Values.hmacKey.existingSecret.passwordKey | default (printf "abcdefghi123456789") }}
+              name: {{ .Values.hmacKey.existingSecret.secretNamev}}
+              key: {{ .Values.hmacKey.existingSecret.passwordKey }}
         {{- end }}
         securityContext:
           allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
