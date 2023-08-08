@@ -45,8 +45,8 @@ spec:
         - name: INVIDIOUS_HMAC_KEY
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.hmacKey.existingSecret.secretName | default "invidious" }}
-              key: {{ .Values.hmacKey.existingSecret.passwordKey | default "hmac_key" }}
+              name: {{ .Values.hmacKey.existingSecret.secretName }}
+              key: {{ .Values.hmacKey.existingSecret.passwordKey }}
         securityContext:
           allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
           capabilities:
