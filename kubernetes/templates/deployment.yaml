@@ -42,13 +42,11 @@ spec:
             configMapKeyRef:
               key: INVIDIOUS_CONFIG
               name: {{ template "invidious.fullname" . }}
-        {{- if .Values.hmacKey.existingSecret.enabled }}
         - name: INVIDIOUS_HMAC_KEY
           valueFrom:
             secretKeyRef:
               name: {{ .Values.hmacKey.existingSecret.secretName | default "invidious" }}
               key: {{ .Values.hmacKey.existingSecret.passwordKey | default "hmac_key" }}
-        {{- end }}
         securityContext:
           allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
           capabilities:
